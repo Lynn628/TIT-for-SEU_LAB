@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="s2sh-default" extends="struts-default,json-default"
+		namespace="/">
+		<interceptors>
+			<!-- 配置角色的权限检查拦截器 -->
+			<!-- 配置默认的拦截器栈 -->
+			<interceptor-stack name="userStack">
+				<interceptor-ref name="defaultStack" />
+
+				<!-- <interceptor-ref name="json"> <param name="enableSMD">true</param> 
+					</interceptor-ref> -->
+			</interceptor-stack>
+
+
+		</interceptors>
+		<default-interceptor-ref name="userStack" />
+		<global-results>
+			<result name="login">index.jsp</result>
+		</global-results>
+		<!-- <global-results> <result name="Exception">/common/exception.jsp</result> 
+			<result name="RuntimeException">/common/runtime_exception.jsp </result> </global-results> 
+			<global-exception-mappings> <exception-mapping result="Exception" exception="java.lang.Exception"></exception-mapping> 
+			<exception-mapping result="Exception" exception="java.lang.RuntimeException"></exception-mapping> 
+			</global-exception-mappings> -->
+	</package>
+</struts>

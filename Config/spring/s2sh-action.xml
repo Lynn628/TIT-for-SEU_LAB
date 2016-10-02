@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans      
+       classpath:/org/springframework/beans/factory/xml/spring-beans-2.0.xsd"
+	default-lazy-init="true">
+	<bean id="testAction1" class="action.TestAction">
+		<property name="ser1" ref="testService"></property>
+
+	</bean>
+	<bean id="input1" class="action.InputAction">
+		<property name="addSer" ref="addService"></property>
+	</bean>
+	<bean id="output" class="action.OutputAction">
+		<property name="outputSer" ref="outputService"></property>
+	</bean>
+	<bean id="overview" class="action.OverviewAction">
+		<property name="overSer" ref="overviewService"></property>
+	</bean>
+	<bean id="count" class="action.CountAction">
+		<property name="countSer" ref="countService"></property>
+	</bean>
+</beans>

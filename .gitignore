@@ -1,0 +1,8 @@
+.classpath
+.project
+.myhibernatedata
+build
+bin
+WebRoot/WEB-INF/classes/*
+.settings
+WebRoot/myTest/*

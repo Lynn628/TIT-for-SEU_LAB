@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans      
+       classpath:/org/springframework/beans/factory/xml/spring-beans-2.0.xsd"
+	default-lazy-init="true">
+	<bean id="testService" class="service.impl.TestServiceImpl">
+		<property name="imgDao" ref="imageDao"></property>
+	</bean>
+	<bean id="addService" class="service.impl.AddServiceImpl">
+		<property name="atomDao" ref="atomDao"></property>
+		<property name="queDao" ref="queDao"></property>
+		<property name="imgDao" ref="imageDao"></property>
+		<property name="solDao" ref="solutionDao"></property>
+		<property name="queAndAtomDao" ref="queAndatomDao"></property>
+		<property name="queAndImgDao" ref="queAndimageDao"></property>
+		<property name="queAndTypeDao" ref="queAndtypeDao"></property>
+	</bean>
+	<bean id="outputService" class="service.impl.OutputServiceImpl">
+		<property name="atomDao" ref="atomDao"></property>
+		<property name="queDao" ref="queDao"></property>
+		<property name="imgDao" ref="imageDao"></property>
+		<property name="solDao" ref="solutionDao"></property>
+		<property name="typeDao" ref="typeDao"></property>
+		<property name="queAndAtomDao" ref="queAndatomDao"></property>
+		<property name="queAndImgDao" ref="queAndimageDao"></property>
+		<property name="queAndTypeDao" ref="queAndtypeDao"></property>
+	</bean>
+	<bean id="overviewService" class="service.impl.OverviewServiceImpl">
+		<property name="queDao" ref="queDao"></property>
+		<property name="queAndTypeDao" ref="queAndtypeDao"></property>
+		<property name="typeDao" ref="typeDao"></property>
+	</bean>
+	<bean id="countService" class="service.impl.CountServiceImpl">
+		<property name="queDao" ref="queDao"></property>
+		<property name="queAndTypeDao" ref="queAndtypeDao"></property>
+	</bean>	
+</beans>
